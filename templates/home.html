@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Career Buzz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.js') }}">
+    <style>
+         #banner {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    {% include "nav.html" %}
+    <img class="img-fluid" id="banner" src="static/banner.jpg">
+    <div class="container">
+        <h1 class="text-center mt-2 mb-4">Career {{ company_name }}</h1>
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="col-md-6">
+                <p class="lead"> 
+                    Welcome to CareerBuzz, a meeting point for talents and opportunities
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, possimus? Sed, vel 
+                    sapiente amet molestias dolorum totam odio quod maxime impedit sint dolorem illum quia 
+                    dolores quo cupiditate repellat facere.ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, possimus? Sed, vel
+                    sapiente amet molestias dolorum totam odio quod maxime impedit sint dolorem illum quia
+                    dolores quo cupiditate repellat facere.
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="/static/staff.jpg" style="height: 320px; border-radius: 4px;">
+            </div>
+        </div>
+
+        <p>
+            <h2 class="text-center mt-2 mb-4">Job Opennings</h2>
+            <div>
+                {% for job in jobs %}
+                   {% include "jobitems.html" %}
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <a href="mailto:fetchmrjosh@gmail.com?subject=Enquiry%20About%20Job%20Openning&body=My%20name%3A%20%3CEnter%20your%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3CEnter%20question%20here%3E%0D%0A%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
+            </div>
+        </p>
+    </div>
+    {% include "footer.html" %}
+
+</body>
+</html>
+
