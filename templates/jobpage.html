@@ -9,16 +9,22 @@
     {% include "banner.html" %}
     <div class="container">
         <h1 class="text-center mt-2 mb-4">CareerBuzz</h1>
-        <h3>Title</h3>
-        <p>{{ listed_job.title }}</p>
-        <h3>Location</h3>
-        <p>{{ listed_job.location }}</p>
-        <h3>Salary</h3>
+        <h3 class="mb-2">{{ listed_job.title }}</h3>
+        <p class="lead mt-0">{{ listed_job.location }}</p>
+        <h4>Salary</h4>
         <p>{{ listed_job.currency }} {{ listed_job.salary }}</p>
-        <h3>Responsibility</h3>
-        <p>{{ listed_job.responsibilities }}</p>
-        <h3>Requirements</h3>
-        <p>{{ listed_job.Requiremrnts }}</p>
+        <h4>Responsibility</h4>
+        <ul>
+            {% for line in listed_job.responsibilities.split("\n") %}
+                <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+        <h4>Requirements</h4>
+        <ol>
+            {% for line in listed_job.Requiremrnts.split("\n") %}
+            <li>{{ line }}</li>
+            {% endfor %}
+        </ol>
     </div>
 
     {% include "footer.html" %}
