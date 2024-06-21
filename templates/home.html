@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Career Buzz</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.js') }}">
-    <style>
-         #banner {
-            width: 100%;
-            height: 460px;
-            object-fit: cover;
-            margin-bottom: 16px;
-        }
-    </style>
+    <title>CareerBuzz</title>
+    {% include "bootstrap.html" %}
 </head>
 <body>
     {% include "nav.html" %}
-    <img class="img-fluid" id="banner" src="static/banner.jpg">
+    {% include "banner.html" %}
     <div class="container">
-        <h1 class="text-center mt-2 mb-4">Career {{ company_name }}</h1>
+        <h1 class="text-center mt-2 mb-4">CareerBuzz</h1>
         <div class="row" style="margin-bottom: 16px;">
             <div class="col-md-6">
                 <p class="lead"> 
